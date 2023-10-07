@@ -38,7 +38,22 @@
                     localStorage.removeItem(obj.email)
                     parentEle.removeChild(childEle)
                 }
+
+                const editButton = document.createElement('input')
+                editButton.type = "button"
+                editButton.value = 'Edit'
+                editButton.onclick = () => {
+                    localStorage.removeItem(obj.email)
+                    parentEle.removeChild(childEle)
+                    document.getElementById('usernameInputTag').value = obj.name
+                    document.getElementById('emailInputTag').value = obj.email
+                    document.getElementById('phonenumberInputTag').value = obj.phonenumber
+
+                }
+
+
                 childEle.appendChild(deleteButton)
+                childEle.appendChild(editButton)
                 parentEle.appendChild(childEle)
             }
         </script>
